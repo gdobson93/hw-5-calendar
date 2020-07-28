@@ -10,7 +10,7 @@ $(document).ready(function() {
     console.log('time:', time);
 
     // save the value in localStorage as time
-    
+    localStorage.setItem("value", JSON.stringify(time));
   });
 
   function hourUpdater() {
@@ -23,6 +23,14 @@ $(document).ready(function() {
       var blockHour = parseInt($(this).attr("id").split("-")[1]);
 
       console.log("block hour:", blockHour);
+
+      if (currentHour > blockHour) {
+        $(this).addClass("past");
+      } else if (currentHour === blockHour) {
+        $(this).addClass("present");
+      } else {
+        $(this).addClass("future");
+      }
 
       // check if we've moved past this time
       
@@ -48,4 +56,5 @@ $(document).ready(function() {
 
   // display current day on page
   $("#currentDay").text(moment().format("dddd, MMMM Do"));
+  $("#currentDay").css("text-decoration", "underline");
 });

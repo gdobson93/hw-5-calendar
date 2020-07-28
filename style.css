@@ -33,13 +33,15 @@ textarea{
 .row {
   white-space: pre-wrap;
   height: 80px;
-  border-top: 1px solid white;;
+  border-top: 1px solid white;
+  justify-content: center;
 }
 
 .hour {
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
+  padding-top: 30px;
 }
 
 .past {
@@ -65,7 +67,32 @@ textarea{
   color: white;
 }
 
-.saveBtn i:hover {
+.saveBtn:hover {
   font-size: 20px;
   transition: all .3s ease-in-out;
+}
+
+.clearBtn {
+  float: center;
+  border-radius: 15px;
+  background-color: gray;
+  color: white;
+  opacity: 1;
+  font-size: 30px;
+  padding: 5px;
+  margin: auto;
+  display: block;
+}
+
+.clearBtn:Hover {
+  font-size: 35px;
+  opacity: 0.5;
+  transition: all .3s ease-in-out;
+}
+
+@media (max-width: 640px) {
+  .time-block {
+    font-size: 20px;
+    width: 10vw;
+  }
 }
